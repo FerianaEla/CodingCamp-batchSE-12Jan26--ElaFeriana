@@ -3,7 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio Website - Coding Camp</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <div class="logo-container">
+        <a href="#home">
+          <img src="images/logo.jpg" alt="Logo RevoU" class="logo-img" />
+        </a>
+      </div>
+      <div class="menu">
+        <a href="#home" class="menu-btn">Home</a>
+        <a href="#profile" class="menu-btn">Our Profile</a>
+        <a href="#portfolio" class="menu-btn">Portfolio</a>
+        <a href="#message-us" class="menu-btn">Message Us</a>
+      </div>
+    </nav>
+
+    <header id="home">
+      <h1 id="welcome-name">Hi Ela, Welcome To Website</h1>
+      <p>Ini adalah website latihan pertama</p>
+      <div class="banner-container">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
+          alt="Company Banner"
+          class="main-banner"
+        />
+      </div>
+    </header>
+
+    <section id="profile">
+      <h2>Our Profile</h2>
+      <div class="profile-card">
+        <h3>About the Company</h3>
+        <p>
+          Kami adalah perusahaan inovatif yang bergerak di bidang teknologi
+          pendidikan, berkomitmen untuk mencetak software engineer handal.
+        </p>
+        <br />
+        <h3>Vision & Mission</h3>
+        <p>
+          Visi: Menjadi pusat pelatihan coding terbaik di Indonesia. <br />
+          Misi: Memberikan edukasi yang aksesibel dan praktis bagi semua orang.
+        </p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="headquarter">
+      <h2>Our Headquarter</h2>
+      <div class="hq-container">
+        <div class="hq-item">
+          <div class="circle">
+            <img src="images/Jakarta.jpg" alt="Jakarta" />
+          </div>
+          <p>Jakarta</p>
+        </div>
+        <div class="hq-item">
+          <div class="circle">
+            <img src="images/Bandung.jpg" alt="Bandung" />
+          </div>
+          <p>Bandung</p>
+        </div>
+        <div class="hq-item">
+          <div class="circle">
+            <img src="images/Surabaya.jpg" alt="Surabaya" />
+          </div>
+          <p>Surabaya</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="message-us" class="message-section">
+      <h2>Message Us</h2>
+      <div class="flex-container">
+        <form id="messageForm">
+          <div class="form-group">
+            <label>Nama :</label>
+            <input type="text" id="input-name" placeholder="Nama" required />
+          </div>
+          <div class="form-group">
+            <label>Tanggal Lahir :</label>
+            <input type="date" id="input-birthdate" required />
+          </div>
+          <div class="form-group">
+            <label>Jenis Kelamin :</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                name="gender"
+                value="Laki-Laki"
+                id="male"
+                checked
+              />
+              <label for="male">Laki-Laki</label>
+              <input type="radio" name="gender" value="Perempuan" id="female" />
+              <label for="female">Perempuan</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pesan :</label>
+            <textarea
+              id="input-message"
+              placeholder="Pesan"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" id="submit-btn">Submit</button>
+        </form>
+
+        <div class="result-box">
+          <p><strong>Current time :</strong> <span id="current-time"></span></p>
+          <br />
+          <p><strong>Nama :</strong> <span id="res-name"></span></p>
+          <p>
+            <strong>Tanggal Lahir :</strong> <span id="res-birthdate"></span>
+          </p>
+          <p><strong>Jenis Kelamin :</strong> <span id="res-gender"></span></p>
+          <p><strong>Pesan :</strong> <span id="res-message"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Created By RevoU</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

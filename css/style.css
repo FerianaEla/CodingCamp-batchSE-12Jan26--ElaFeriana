@@ -1,0 +1,230 @@
+/* Reset & Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 2px solid #ccc;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+.logo-img {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid #767676; /* Border tipis sesuai mockup */
+  padding: 8px 20px;
+  margin-left: -1px; /* Membuat border antar tombol menyatu */
+  font-size: 14px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #f0f0f0;
+}
+
+/* Sections Layout */
+header,
+section {
+  padding: 60px 10%;
+  border-bottom: 2px solid #ccc;
+  min-height: 50vh;
+}
+
+/* Hero Banner */
+.banner-container {
+  width: 100%;
+  margin-top: 25px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.main-banner {
+  width: 100%;
+  height: 578px; /* Ukuran sesuai dokumen instruksi */
+  object-fit: cover;
+  display: block;
+}
+
+/* Profile Section */
+.profile-card {
+  text-align: left;
+  background: #fafafa;
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid #ffd700;
+}
+
+/* Container Utama */
+.hq-container {
+  display: flex !important;
+  justify-content: space-around !important;
+  margin-top: 40px !important;
+  flex-wrap: wrap !important;
+}
+
+.hq-item {
+  text-align: center !important;
+  margin: 10px !important;
+}
+
+/* Lingkaran Bulat */
+.circle {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  border: 1px solid #000 !important;
+  overflow: hidden !important; /* WAJIB: Memotong gambar agar bulat */
+  margin: 0 auto 10px auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #f0f0f0 !important; /* Warna jika gambar gagal */
+}
+
+/* Gambar di Dalam Lingkaran */
+.circle img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Mencegah gambar gepeng */
+  display: block !important;
+}
+
+.circle:hover {
+  border-color: #ffd700;
+  transform: scale(1.05);
+}
+
+/* Form & Result Box */
+.flex-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+form {
+  flex: 1.2;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.form-group label {
+  width: 130px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #767676;
+  border-radius: 2px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+#submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #efefef; /* Warna tombol sesuai mockup */
+  color: black;
+  border: 1px solid #767676;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#submit-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Result Box Style */
+.result-box {
+  flex: 1;
+  border: 1px solid #000;
+  padding: 25px;
+  background: #fff;
+  min-height: 250px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: right;
+  padding: 20px 10%;
+  font-size: 12px;
+  color: #000;
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-banner {
+    height: 300px;
+  }
+
+  .flex-container,
+  .hq-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .form-group label {
+    width: 100%;
+  }
+
+  .circle {
+    margin: 0 auto 10px auto;
+  }
+}
