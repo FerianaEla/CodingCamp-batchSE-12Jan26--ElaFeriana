@@ -32,9 +32,10 @@ body {
 /* --- NAVBAR --- */
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Menarik logo ke kiri dan menu ke kanan */
   align-items: center;
-  padding: 5px 8%;
+  /* Perkecil padding samping dari 8% menjadi 2% agar lebih mepet ke pinggir */
+  padding: 5px 2%;
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
