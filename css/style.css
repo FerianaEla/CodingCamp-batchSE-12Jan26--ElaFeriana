@@ -106,20 +106,25 @@ section {
 
 header {
   background: var(--white);
+  text-align: center; /* Meratakan teks dan gambar ke tengah */
+  padding: 40px 10%;
   margin: 20px 8%;
   border-radius: 20px;
   box-shadow: var(--shadow);
+  /* Jarak aman agar header tidak tertutup navbar saat diklik menu Home */
+  scroll-margin-top: 90px;
 }
 
 header h1 {
   font-size: 2.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: var(--dark-text);
 }
 
 header p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #636e72;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .banner-container {
@@ -130,7 +135,7 @@ header p {
 
 .main-banner {
   width: 100%;
-  height: 350px;
+  height: 350px; /* Membatasi tinggi agar header lebih ringkas */
   object-fit: cover;
   display: block;
 }
@@ -163,7 +168,26 @@ section h2::after {
   margin: 0 auto;
   text-align: left; /* Konten teks dalam kartu tetap kiri agar rapi */
 }
+.profile-card p {
+  line-height: 1.8; /* Memberikan ruang antar baris teks agar tidak rapat */
+  color: var(--dark-text);
+  font-size: 1rem;
+}
 
+.profile-card strong {
+  color: #000; /* Memberikan penekanan pada kata penting */
+  font-weight: 700;
+}
+.project-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 800;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--dark-text);
+}
 /* --- HQ CIRCLES --- */
 .hq-container {
   display: flex;
@@ -317,4 +341,88 @@ footer {
   transform: translateY(-5px); /* Efek terangkat */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
   border-left-width: 15px; /* Garis kuning menebal saat di-hover */
+}
+/* Penataan Wrapper di dalam Portfolio */
+.skills-wrapper,
+.projects-wrapper {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.skills-wrapper h3,
+.projects-wrapper h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--dark-text);
+}
+
+/* CSS untuk Skill Card agar ramping di dalam Portfolio */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* Styling dasar kartu skill */
+.skill-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 20px;
+  /* Bayangan awal yang lembut */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: left;
+  /* Transisi agar gerakan timbul terasa halus, bukan kaget */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* EFEK TIMBUL SAAT KURSOR DIATAS KARTU */
+.skill-card:hover {
+  /* Mengangkat kartu ke atas sejauh 10px */
+  transform: translateY(-10px);
+  /* Mempertegas bayangan agar efek melayang lebih nyata */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  /* Memberikan sedikit perubahan warna border agar lebih hidup */
+  border-color: var(--primary-color);
+}
+
+.skill-card h4 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Menghapus bullet point bawaan dan merapikan list */
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Jarak antara ikon dan teks */
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Mengatur ukuran ikon agar seragam */
+.skill-card ul li i {
+  font-size: 1.2rem;
+  width: 20px; /* Memastikan semua ikon memiliki lebar yang sama agar teks lurus */
+  text-align: center;
+}
+
+/* Gaya untuk judul kartu */
+.skill-card h4 i {
+  margin-right: 10px;
+  color: var(--dark-text);
 }

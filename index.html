@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website - Ela Feriana</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
   </head>
   <body>
     <nav>
@@ -15,63 +19,139 @@
       </div>
       <div class="menu">
         <a href="#home">Home</a>
-        <a href="#profile">Our Profile</a>
+        <a href="#profile">My Profile</a>
         <a href="#portfolio">Portofolio</a>
         <a href="#message-us">Message Us</a>
       </div>
     </nav>
 
     <header id="home">
-      <div class="header-content">
-        <h1>Hi Ela, Welcome To Website</h1>
-        <p>Ini adalah website latihan pertama</p>
-        <div class="banner-container">
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
-            alt="Company Banner"
-            class="main-banner"
-          />
-        </div>
+      <h1 id="welcome-text">Hi Name, Welcome To My Website</h1>
+      <p>Ini adalah website Portofolio Saya.</p>
+      <div class="banner-container">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
+          alt="Personal Banner"
+          class="main-banner"
+        />
       </div>
     </header>
 
     <section id="profile">
-      <h2>Our Profile</h2>
+      <h2>My Profile</h2>
       <div class="profile-card">
-        <h3>About the Company</h3>
+        <h3>About Me</h3>
         <p>
-          Kami adalah perusahaan inovatif yang bergerak di bidang teknologi
-          pendidikan, berkomitmen untuk mencetak software engineer handal.
+          Saya adalah mahasiswa Program Studi
+          <strong>Sistem Informasi</strong> yang memiliki minat besar dalam
+          pengembangan perangkat lunak dan analisis data. Saat ini, saya aktif
+          mengikuti pelatihan di <strong>RevoU Coding Camp</strong> untuk
+          memperdalam keahlian di bidang <em>Front-End Development</em> dan
+          membangun fondasi yang kuat sebagai <em>Software Engineer</em> masa
+          depan.
         </p>
         <br />
-        <h3>Vision & Mission</h3>
+        <h3>Education & Goals</h3>
         <p>
-          Visi: Menjadi pusat pelatihan coding terbaik di Indonesia. <br />
-          Misi: Memberikan edukasi yang aksesibel dan praktis bagi semua orang.
+          <strong>Pendidikan:</strong> Mahasiswa Sistem Informasi <br />
+          <strong>Fokus Belajar:</strong> HTML5, CSS3, JavaScript, Python,
+          PHP,MySQL dan Version Control (Git). <br />
+          <strong>Tujuan:</strong> Menggabungkan pemahaman bisnis dari Sistem
+          Informasi dengan keterampilan teknis coding untuk menciptakan solusi
+          digital yang inovatif dan solutif.
         </p>
       </div>
     </section>
 
     <section id="portfolio">
-      <h2>Our Headquarter</h2>
-      <div class="hq-container">
-        <div class="hq-item">
-          <div class="circle">
-            <img src="images/Jakarta.jpg" alt="Jakarta" />
+      <h2>My Portofolio</h2>
+
+      <div class="skills-wrapper">
+        <h3>Skill & Tools</h3>
+        <div class="skills-container">
+          <div class="skill-card">
+            <h4><i class="fa-solid fa-laptop-code"></i> Programming</h4>
+            <ul>
+              <li>
+                <i class="fa-brands fa-html5" style="color: #e34c26"></i> HTML
+              </li>
+              <li>
+                <i class="fa-brands fa-css3-alt" style="color: #264de4"></i> CSS
+              </li>
+              <li><i class="fa-brands fa-js" style="color: #f7df1e"></i> JS</li>
+              <li>
+                <i class="fa-brands fa-php" style="color: #777bb4"></i> PHP
+              </li>
+              <li>
+                <i class="fa-brands fa-python" style="color: #3776ab"></i>
+                Python
+              </li>
+            </ul>
           </div>
-          <p>Jakarta</p>
+
+          <div class="skill-card">
+            <h4><i class="fa-solid fa-microchip"></i> IoT</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-circle-notch" style="color: #00979d"></i>
+                Arduino
+              </li>
+              <li>
+                <i class="fa-solid fa-memory" style="color: #00599c"></i> ESP32
+              </li>
+              <li>
+                <i class="fa-solid fa-wifi" style="color: #ff6600"></i> NodeMCU
+              </li>
+              <li>
+                <i class="fa-brands fa-raspberry-pi" style="color: #c51a4a"></i>
+                Raspberry Pi
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h4><i class="fa-solid fa-palette"></i> Design</h4>
+            <ul>
+              <li>
+                <i class="fa-brands fa-figma" style="color: #f24e1e"></i> Figma
+              </li>
+              <li>
+                <i class="fa-solid fa-bezier-curve" style="color: #00c4cc"></i>
+                Canva
+              </li>
+              <li>
+                <i class="fa-solid fa-file-image" style="color: #31a8ff"></i>
+                Photoshop
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="hq-item">
-          <div class="circle">
-            <img src="images/Bandung.jpg" alt="Bandung" />
+      </div>
+
+      <div class="projects-wrapper">
+        <h3>My Projects</h3>
+        <div class="hq-container">
+          <div class="hq-item">
+            <div class="circle">
+              <img src="images/project1.png" alt="Project 1" />
+            </div>
+            <p>Personal Portfolio Website</p>
+            <small>HTML5 & CSS3 Implementation</small>
           </div>
-          <p>Bandung</p>
-        </div>
-        <div class="hq-item">
-          <div class="circle">
-            <img src="images/Surabaya.jpg" alt="Surabaya" />
+          <div class="hq-item">
+            <div class="circle">
+              <img src="images/project2.png" alt="Project 2" />
+            </div>
+            <p>Project Simorwa Kampus</p>
+            <small>Flexbox & UI Design</small>
           </div>
-          <p>Surabaya</p>
+          <div class="hq-item">
+            <div class="circle">
+              <img src="images/project3.png" alt="Project 3" />
+            </div>
+            <p>Project OOP</p>
+            <small>CRUD (PHP, SQL, CSS)</small>
+          </div>
         </div>
       </div>
     </section>
