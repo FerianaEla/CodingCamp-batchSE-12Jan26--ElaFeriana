@@ -1,230 +1,319 @@
-/* Reset & Global Styles */
+/* Import Font Modern */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary-color: #ffd700;
+  --dark-text: #2d3436;
+  --light-bg: #f4f7f6;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* Reset Styles */
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Tambahkan ini agar saat klik menu, konten tidak tertutup Navbar (70px tinggi nav + 20px jarak) */
+  scroll-padding-top: 90px;
 }
 
-/* Navbar */
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+/* --- NAVBAR --- */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
-  border-bottom: 2px solid #ccc;
+  padding: 5px 8%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
-  background: white;
   z-index: 1000;
+  height: 70px;
 }
 
 .logo-img {
   width: 60px;
-  height: auto;
+  height: 60px;
+  border-radius: 50%; /* Membuat logo bulat sempurna */
+  object-fit: cover; /* Mencegah gambar gepeng */
+  border: 2px solid var(--primary-color);
   display: block;
+  transition: var(--transition);
 }
 
-.menu {
-  display: flex;
+.logo-img:hover {
+  transform: scale(1.1);
 }
 
 .menu a {
   text-decoration: none;
-  color: black;
-  border: 1px solid #767676; /* Border tipis sesuai mockup */
-  padding: 8px 20px;
-  margin-left: -1px; /* Membuat border antar tombol menyatu */
+  color: var(--dark-text);
+  font-weight: 600;
   font-size: 14px;
-  background-color: white;
-  transition: 0.3s;
+  padding: 10px 20px; /* Padding sedikit diperbesar agar area klik lebih nyaman */
+  margin-left: 10px;
+  border-radius: 8px;
+  position: relative; /* Diperlukan untuk efek garis bawah */
+  transition: all 0.3s ease-in-out; /* Transisi yang lebih halus */
+  display: inline-block;
 }
 
+/* Efek saat kursor diarahkan (Hover) */
 .menu a:hover {
-  background: #f0f0f0;
+  background-color: var(--primary-color);
+  color: #000; /* Memastikan teks tetap hitam pekat saat background kuning */
+  transform: translateY(-2px); /* Efek sedikit terangkat */
 }
 
-/* Sections Layout */
+/* Menambahkan indikator garis bawah yang muncul halus */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 50%;
+  background-color: #000;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.menu a:hover::after {
+  width: 60%; /* Garis muncul hanya saat di-hover */
+}
+
+/* --- HEADER & SECTIONS (RATA TENGAH) --- */
 header,
 section {
   padding: 60px 10%;
-  border-bottom: 2px solid #ccc;
-  min-height: 50vh;
+  text-align: center;
+  /* Memastikan elemen id memiliki jarak saat di-scroll */
+  scroll-margin-top: 90px;
 }
 
-/* Hero Banner */
+header {
+  background: var(--white);
+  margin: 20px 8%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin-bottom: 20px;
+}
+
 .banner-container {
   width: 100%;
-  margin-top: 25px;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border-radius: 15px;
 }
 
 .main-banner {
   width: 100%;
-  height: 578px; /* Ukuran sesuai dokumen instruksi */
+  height: 350px;
   object-fit: cover;
   display: block;
 }
 
-/* Profile Section */
-.profile-card {
-  text-align: left;
-  background: #fafafa;
-  padding: 30px;
-  border-radius: 8px;
-  border-left: 5px solid #ffd700;
+/* --- SECTION DECORATION --- */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
 }
 
-/* Container Utama */
-.hq-container {
-  display: flex !important;
-  justify-content: space-around !important;
-  margin-top: 40px !important;
-  flex-wrap: wrap !important;
-}
-
-.hq-item {
-  text-align: center !important;
-  margin: 10px !important;
-}
-
-/* Lingkaran Bulat */
-.circle {
-  width: 150px !important;
-  height: 150px !important;
-  border-radius: 50% !important;
-  border: 1px solid #000 !important;
-  overflow: hidden !important; /* WAJIB: Memotong gambar agar bulat */
-  margin: 0 auto 10px auto !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-color: #f0f0f0 !important; /* Warna jika gambar gagal */
-}
-
-/* Gambar di Dalam Lingkaran */
-.circle img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Mencegah gambar gepeng */
-  display: block !important;
-}
-
-.circle:hover {
-  border-color: #ffd700;
-  transform: scale(1.05);
-}
-
-/* Form & Result Box */
-.flex-container {
-  display: flex;
-  gap: 40px;
-  margin-top: 30px;
-  align-items: flex-start;
-}
-
-form {
-  flex: 1.2;
-}
-
-.form-group {
-  display: flex;
-  margin-bottom: 15px;
-  align-items: center;
-}
-
-.form-group label {
-  width: 130px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-input,
-textarea {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #767676;
+section h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 8px auto 0;
   border-radius: 2px;
 }
 
+.profile-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border-left: 8px solid var(--primary-color);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left; /* Konten teks dalam kartu tetap kiri agar rapi */
+}
+
+/* --- HQ CIRCLES --- */
+.hq-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  transition: var(--transition);
+}
+
+.circle:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hq-item p {
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* --- FORM & RESULT BOX --- */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+form {
+  flex: 1;
+  max-width: 500px;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
 textarea {
-  height: 100px;
-  resize: vertical;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 #submit-btn {
   width: 100%;
-  padding: 10px;
-  background: #efefef; /* Warna tombol sesuai mockup */
-  color: black;
-  border: 1px solid #767676;
+  padding: 12px;
+  background: var(--dark-text);
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: var(--transition);
 }
 
 #submit-btn:hover {
-  background: #e0e0e0;
+  background: var(--primary-color);
+  color: black;
 }
 
-/* Result Box Style */
 .result-box {
   flex: 1;
-  border: 1px solid #000;
+  max-width: 400px;
+  border: 2px dashed var(--primary-color);
   padding: 25px;
-  background: #fff;
-  min-height: 250px;
-  font-size: 14px;
-  line-height: 1.6;
+  background: #fffcf0;
+  border-radius: 15px;
+  text-align: left;
 }
 
-/* Footer */
+/* --- FOOTER --- */
 footer {
-  text-align: right;
-  padding: 20px 10%;
-  font-size: 12px;
-  color: #000;
+  text-align: center;
+  padding: 15px;
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 40px;
 }
 
-/* Responsive Design (Mobile) */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    gap: 15px;
+    height: auto;
     padding: 15px;
+    gap: 10px;
   }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .main-banner {
-    height: 300px;
-  }
-
-  .flex-container,
-  .hq-container {
+  .flex-container {
     flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
+    align-items: center;
   }
-
-  .form-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .form-group label {
+  form,
+  .result-box {
+    max-width: 100%;
     width: 100%;
   }
-
-  .circle {
-    margin: 0 auto 10px auto;
+  header {
+    margin: 10px 2%;
   }
+  .main-banner {
+    height: 200px;
+  }
+}
+.profile-card {
+  /* ... kode sebelumnya ... */
+  transition: var(--transition);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px); /* Efek terangkat */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+  border-left-width: 15px; /* Garis kuning menebal saat di-hover */
 }
